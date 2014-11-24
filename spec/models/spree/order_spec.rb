@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Spree
-  RSpec.describe Order do
+  RSpec.describe Order, type: :model do
     let(:user) { create(:user) }
     let!(:store_credit) { create(:store_credit, user: user, amount: 45.00, remaining_amount: 45.00)}
     let(:line_item) { mock_model(LineItem, :variant => double('variant'), :quantity => 5, :price => 10) }
